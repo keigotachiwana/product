@@ -1,0 +1,733 @@
+*{
+  margin:0;
+  padding:0;
+  font-family:"Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN";
+}
+/* ヘッダー */
+.header {
+  background-color:black;
+  display: flex;
+  height: 94px;
+  width:100%;
+  position: fixed;
+  z-index: 9999;
+}
+.nav-list{
+  list-style: none;
+  margin-top: 30px;
+}
+.nav-item a{
+  text-decoration: none;
+  color:white;
+  margin-right:40px;
+}
+.c-button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent; 
+}  
+.p-hamburger {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  margin: auto;
+  outline: none;
+  padding: 0 1em;
+  box-shadow: 0 0 2rem transparent;
+  -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;  
+}
+.p-hamburger__line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+  height:3px;
+  background-color: white;
+  -webkit-transition: inherit;
+          transition: inherit;
+}
+.p-hamburger__line::before,
+.p-hamburger__line::after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  content: '';
+  -webkit-transition: inherit;
+          transition: inherit;
+}
+.p-hamburger__line::before {
+  top: -5px;
+}
+.p-hamburger__line::after {
+  top: 5px;
+}
+.p-hamburger[aria-expanded="true"] .p-hamburger__line {
+  background-color: transparent;
+}
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::before,
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::after {
+  top: 0;
+  background-color: white;
+} 
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg); 
+          transform: rotate(45deg);
+}
+.p-hamburger[aria-expanded="true"] .p-hamburger__line::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);        
+  transform: rotate(-45deg);
+} 
+.header-nav{
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  height: 50%;  
+  font-size: 16px;
+  box-sizing: border-box;
+  padding-top: 50px;
+  transition: .3s;
+  margin-left: auto;
+}
+
+
+.header-nav.open{
+  top: 0px;
+}
+.nav-list{
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  margin-top: 40px;
+  background-color: #000000CC; 
+  /*justify-content: center;*/
+}
+.nav-item{
+  display: block;
+  padding : 20px;
+}
+.nav-item a{
+  color: #ddd;
+  text-decoration: none;
+} 
+
+/* main css */
+.main{
+  display: flex;
+  flex-direction: column;
+  background-image: url("top-pic.jpg");
+  background-size: cover;
+  padding-top: 94px;
+  width: 100%;
+  height:757px;
+}
+.entrance{
+  flex:0 1 auto;
+  margin:auto;
+}
+.main{
+  font-size: 50px;
+}
+.entrance p{
+  font-size: 20px;
+}
+
+/* introduce,concept css */
+.introduce{
+  background-image: url("introduction-pic.jpg");
+  background-size: cover;
+  background-color: rgba(255, 250, 250, 0.137);
+  background-blend-mode: lighten;
+  padding-bottom: 60px;
+  padding-top: 40px;
+  
+}
+.introduce-pic{
+  background-color:black;
+  display: flex;
+}
+.about{
+  color:white;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+}
+.about::before{
+  content: '';/*何も入れない*/
+  display: inline-block;/*忘れずに！*/
+  width: 50px;/*画像の幅*/
+  height: 50px;/*画像の高さ*/
+  background-image: url("サラリーマン.jpeg");
+  border-radius: 50%;
+  left:38%; 
+  position: absolute;
+}
+.introduce p{
+  color:white;
+  background-color:rgba(43, 39, 39, 0.4);
+  font-size: 19px;
+  line-height: 50px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  padding:7px 7px 7px 7px;
+  border-radius: 20%;
+  text-align: center;
+}
+.concept{
+  color:white;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.sd{
+  display: flex;
+  position: relative;
+}
+.introduce-pic{
+  border-radius: 50%;
+  width:60px;
+  height:60px; 
+  margin: 0 auto;
+}
+.introduction{
+  display: flex;
+  flex-direction: column;
+}
+.quality{
+  font-size: 35px;
+  color: white;
+ text-align: center;
+ padding-top: 20px;
+}
+.sd p{
+  letter-spacing:-2px;
+}
+
+/* 実績紹介 */
+.works{
+  background-image:url(works-pic.jpg);
+  background-size: cover; 
+}
+.performance{
+  color:white;
+  padding-top: 80px;
+  position: relative;
+  text-align: center;
+}
+.work{
+  height:100%;
+  background-color: rgba(145, 139, 139, 0.7);
+  padding-bottom: 130px;
+}
+.select{
+    color:white;
+    position: relative;
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 18px;
+}
+.sample{
+  text-align: center;
+  max-width: 100%;
+  height:auto;
+  transition: all 0.5s;
+}
+ .sample:hover {
+  transform: scale(1.1, 1.1);
+  }
+.work a{
+  color: white;
+}
+.top-banner{
+  display: flex;
+  flex-wrap: wrap;
+}
+.top-banner li{
+ width: calc(100%/3);
+  padding:5px 10px;
+  box-sizing: border-box;
+  list-style: none;
+  height:200px;
+}
+/* service */
+.services{
+  background-image: url(skills-pic.jpg);
+  background-size: cover;
+}
+.box{
+  display: flex;
+}
+.services h1, .services h2, .services h3,.services p, .services li{
+  color:black;
+}
+.service-img{
+  border-radius: 30%;
+  width:330px;
+  height: 270px;
+  margin-left: 120px;
+  margin-bottom: 80px;
+  margin-right: 100px;
+}
+.text-box p{
+  width:650px;
+  font-size: 18px;
+  padding-top: 20px;
+}
+.service{
+  font-size: 26px;
+}
+.text-box h3{
+  font-size: 22px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+.guideline li{
+list-style: none;
+font-size: 18px;
+}
+.text-box{
+  background-color: rgba(255, 255, 255, 0.897);
+  margin-bottom:40px;
+  height:270px;
+  text-align: center;
+}
+.attention{
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 10px;
+}
+
+/* 制作の流れ */
+.flow{
+  padding-bottom: 80px;
+}
+.custom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flow h1, .flow p{
+  color: black;
+}
+.step h1, .step h2{
+  font-size: 22px;
+  font-weight: bolder;
+  text-align: center;
+}
+.step p{
+  font-size: 16px;
+}
+.step{
+  width:250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.arrow{
+display: block;
+width: 15px;
+height: 15px;
+border-top: solid 3px #000000;
+border-right: solid 3px #000000;
+-webkit-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+/* フッター */
+footer{
+  background-image: url(contact-pic.jpg);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode:lighten;
+}
+.contact{
+  color: black;
+  padding-top: 80px;
+  position: relative;
+  text-align: center;
+}
+.offer{
+  font-size:18px;
+  padding-top:30px;
+  text-align: center;
+}
+.contact-icon{
+  text-align: center;
+}
+.bottom-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width:30%;
+  margin: 0 auto;
+  margin-bottom: 120px;
+  margin-top: 50px;
+}
+.bottom-box li{
+  list-style: none;
+}
+.bottom-box img{
+  width:70px;
+  height:70px;
+}
+.bottom-box img:hover{
+  opacity: 0.6;
+}
+.copy-right{
+  font-size: 16px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width:768px) { 
+  .main{
+    height:500px;
+  }
+  .name-introduction{
+    font-size: 30px;
+  }
+  .entrance p{
+    font-size: 15px;
+  }
+   /* About Me */
+  .about{
+    padding-top: 30px;
+    position: relative;
+    font-size:30px;
+  }
+  .about::before{
+    border-radius: 50%;
+    left: 20%; 
+    position: absolute;
+  }
+  .introduce p{
+    background-color:rgba(105, 100, 100, 0.4);
+    font-size: 17px;
+    line-height: 45px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+    border-radius: 10%;
+  }
+  .concept{
+    padding-top: 30px;
+    position: relative;
+    padding-bottom: 30px;
+  }
+  .sd{
+     display: block;
+  }
+  .introduction{
+    margin-bottom: 60px;
+  }
+  .introduce-pic{
+    border-radius: 50%;
+    width:60px;
+    height:60px; 
+    margin: 0 auto;
+  }
+  .quality{
+    font-size: 23px;
+    margin-bottom: 0;
+  }
+  .introduction p{
+    letter-spacing:-2px;
+    font-size: 17px;
+    line-height: 45px;
+    margin-right: 40px;
+    margin-left: 40px;
+    padding:7px 7px 7px 7px;
+    border-radius: 10%;   
+  }
+  /* 実績紹介 */
+.work{
+  height:1100px;
+}
+  .performance{
+  padding-top: 50px;
+}
+.select{
+    padding-bottom: 30px;
+    font-size: 17px;
+}
+.sample{
+  height:auto;
+}
+.top-banner{
+  display:block;
+}
+.top-banner li{
+  width:85%;
+  padding-bottom: 40px;
+  margin:0 auto;
+  margin-bottom: 90px;
+}
+/* service */
+.box{
+  display: block;
+}
+.item{
+  text-align: center;
+}
+.service-img{
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin: 0;
+}
+.text-box p{
+  width:100%;
+  font-size: 17px;
+  padding-top: 20px;
+  text-align: center;
+}
+.service{
+  font-size: 23px;
+}
+.text-box h3{
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+.guideline li{
+list-style: none;
+font-size: 17px;
+}
+.text-box{
+  height:270px;
+  width:90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.attention{
+  font-size: 19px;
+  text-align: center;
+  padding-bottom: 70px;
+}
+/* 制作の流れ */
+.flow{
+  padding-bottom: 80px;
+}
+.custom{
+  display: block;
+}
+.step{
+  margin-bottom: 60px;
+}
+.arrow{
+display: none;
+}
+/* フッター */
+
+.offer{
+  font-size:16px;
+  padding-top:30px;
+  text-align: center;
+}
+.contact-icon{
+  text-align: center;
+}
+.bottom-box {
+  width:60%;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+.bottom-box img{
+  width:60px;
+  height:60px;
+}
+.copy-right{
+  font-size: 16px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+}
+
+@media screen and (min-width:767px) and (max-width:1023px){ 
+  .main{
+    height:500px;
+  }
+  .name-introduction{
+    font-size: 30px;
+  }
+  .entrance p{
+    font-size: 15px;
+  }
+   /* About Me */
+  .about{
+    padding-top: 30px;
+    position: relative;
+    font-size:30px;
+  }
+  .about::before{
+    border-radius: 50%;
+    left: 20%; 
+    position: absolute;
+  }
+  .introduce p{
+    background-color:rgba(105, 100, 100, 0.4);
+    font-size: 17px;
+    line-height: 45px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+    border-radius: 10%;
+  }
+  .concept{
+    padding-top: 30px;
+    position: relative;
+    padding-bottom: 30px;
+  }
+  .sd{
+     display: block;
+  }
+  .introduction{
+    margin-bottom: 60px;
+  }
+  .introduce-pic{
+    border-radius: 50%;
+    width:60px;
+    height:60px; 
+    margin: 0 auto;
+  }
+  .quality{
+    font-size: 23px;
+    margin-bottom: 0;
+  }
+  .introduction p{
+    letter-spacing:-2px;
+    font-size: 17px;
+    line-height: 45px;
+    margin-right: 40px;
+    margin-left: 40px;
+    padding:7px 7px 7px 7px;
+    border-radius: 10%;   
+  }
+  /* 実績紹介 */
+.work{
+  height:1200px;
+}
+  .performance{
+  padding-top: 50px;
+}
+.select{
+    padding-bottom: 30px;
+    font-size: 17px;
+}
+.sample{
+  height:auto;
+}
+.top-banner{
+  display:block;
+}
+.top-banner li{
+  width:70%;
+  padding-bottom: 90px;
+  margin:0 auto;
+  margin-bottom: 120px;
+}
+/* service */
+.box{
+  display: block;
+}
+.item{
+  text-align: center;
+}
+.service-img{
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin: 0;
+}
+.text-box p{
+  width:100%;
+  font-size: 17px;
+  padding-top: 20px;
+  text-align: center;
+}
+.service{
+  font-size: 23px;
+}
+.text-box h3{
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+.guideline li{
+list-style: none;
+font-size: 17px;
+}
+.text-box{
+  height:270px;
+  width:90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.attention{
+  font-size: 19px;
+  text-align: center;
+  padding-bottom: 70px;
+}
+/* 制作の流れ */
+.flow{
+  padding-bottom: 80px;
+}
+.custom{
+  display: block;
+}
+.step{
+  margin-bottom: 60px;
+}
+.arrow{
+display: none;
+}
+/* フッター */
+
+.offer{
+  font-size:16px;
+  padding-top:30px;
+  text-align: center;
+}
+.contact-icon{
+  text-align: center;
+}
+.bottom-box {
+  width:60%;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+.bottom-box img{
+  width:60px;
+  height:60px;
+}
+.copy-right{
+  font-size: 16px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+}
